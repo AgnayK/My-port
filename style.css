@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('./images/Welcome\ to\ My\ Portfolio\ \(1\).png');
+  background-size: 80%;      /* Reduce background image size */
+  background-position: right center;
+  background-repeat: no-repeat;
+  animation: bgFadeInRight 1.2s ease-out;
+}
+@keyframes bgFadeInRight {
+  from {
+    background-position: 120% center;
+    opacity: 0;
+  }
+  to {
+    background-position: right center;
+    opacity: 1;
+  }
+}
+nav {
+  width: 100%;
+  text-align: right;
+  margin-top: 30px; /* Move nav bar tabs further to the left */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  margin-right: 40px; /* This will shift all tabs to the left */
+}
+
+nav li {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+}
+nav a {
+  text-decoration: none;  /* remove underline */
+  color: inherit;         /* use parent color (white in your case) */
+  cursor: pointer;
+}
+main {
+  display: flex;
+  justify-content: flex-start; /* align children to the left */
+  align-items: center;
+  height: calc(100vh - 90px);
+  padding: 0 8vw;
+  box-sizing: border-box;
+}
+
+.intro {
+    width: 100%;
+  max-width: 700px;
+  margin-left: 40px;         /* Push it a bit from the left edge */
+  text-align: left;          /* Align text to the left */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  animation: riseIn 1s ease-out;
+  opacity: 1;              /* optional: some breathing room from screen edge */
+}
+
+
+@keyframes riseIn {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.intro h1 {
+  font-size: 5rem;
+  margin: 0 0 20px 0; /* reduced bottom margin */
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+
+.intro button {
+  font-size: 1rem;
+  padding: 10px 30px;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;  /* reduced from 30px */
+  font-family: inherit;
+  width: 8cm;;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile h2 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Remove image and glow ring styles */
+.oval-img {
+  display: none;
+}
+.certifications {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.certifications li {
+  margin-bottom: 10px;
+}
+.certifications-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.certifications-container h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.certifications {
+  list-style-position: inside; /* makes bullets align with text start */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 0;
+  margin: 0;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); 
+}
+
+.modal-content {
+  background-color: #111;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contact {
+  max-width: 700px;
+  text-align: left;
+  color: #fff;
+  animation: riseIn 1s ease-out;
+}
+
+.contact h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}

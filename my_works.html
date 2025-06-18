@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Works - AGNAY K Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .works-container {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+    }
+    .work-block {
+      width: 130px;
+      height: 130px;
+      border: 2px solid #fff;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      background: transparent;
+      transition: box-shadow 0.2s;
+      box-shadow: 0 0 0 rgba(255,255,255,0);
+    }
+    .work-block:hover {
+      box-shadow: 0 0 18px 2px #fff2;
+    }
+    @media (max-width: 900px) {
+      .works-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #222;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: white;
+}
+.work-block i {
+  font-size: 32px;
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+  <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./my_works.html">My works</a></li>
+      <li><a href="./my_certifications.html">Certifications</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </nav>
+<main>
+  <section class="intro">
+    <h1 style="text-align:center; margin-bottom: 40px;">My Works</h1>
+    <div class="works-container">
+        <div class="work-block" data-title="Sangita" data-description="It is a responsive and visually engaging music player web application, with a strong focus on attractive UI and smooth user experience. The app allows users to browse, play, and manage songs seamlessly, demonstrating both front-end creativity and back-end integration.Designed using HTML and CSS for a modern, user-friendly interface.Backend powered by PHP and MySQL for efficient data handling" data-image="./images/1.png">
+          <i class="fas fa-music"></i>
+        </div>
+        <div class="work-block" data-title="Fillmate" data-description="A web-based application developed as part of my college mini project to automate the creation of customized documents. Built using HTML, CSS, JavaScript, and Django, the system allows users to input data through interactive forms and dynamically generates formatted documents based on templates. It streamlines repetitive documentation tasks, ensuring consistency, efficiency, and ease of use." data-image="./images/2.jpg">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="work-block" data-title="Rudra Writes" data-description="A full-stack web application designed as a personal blogging site, where users can create,read,edit and delete blog posts. This project served as a hands-on implementation of the complete development stack, combining HTML, CSS, JavaScript for the frontend and Node.js, Express.js, and PostgreSQL for the backend. It features dynamic routing, form handling, and persistent data storage, reflecting my understanding of building modern, scalable web applications from scratch." data-image="./images/3.jpg">
+          <i class="fas fa-pen"></i>
+        </div>
+        <div class="work-block" data-title="Secrets" data-description="A web application that allows users to explore anonymous secrets posted on a separate platform. This project focuses on integrating RESTful API communication, where I applied my understanding of API consumption and asynchronous data handling using HTML, CSS, JavaScript, and external APIs. It highlights my ability to fetch, display, and manage external data securely and efficiently within a user-friendly interface." data-image="./images/4.jpg">
+          <i class="fas fa-comment-dots"></i>
+        </div>
+    </div>
+  </section>
+ <div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-description"></p>
+    <img id="modal-image" src="" alt="Project Image" style="width: 100%; max-width: 400px; margin-top: 20px; border-radius: 10px;">
+  </div>
+</div>
+</div>
+</main>
+<script>
+  const modal = document.getElementById("projectModal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDesc = document.getElementById("modal-description");
+  const modalImage = document.getElementById("modal-image");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".work-block").forEach(block => {
+    block.addEventListener("click", () => {
+      const title = block.getAttribute("data-title");
+      const description = block.getAttribute("data-description");
+      const image = block.getAttribute("data-image");
+      modalTitle.textContent = title;
+      modalDesc.textContent = description;
+      modalImage.src = image || "";
+      modalImage.style.display = image ? "block" : "none";
+      modal.style.display = "block";
+    });
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+</body>
+</html>
