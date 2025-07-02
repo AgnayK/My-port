@@ -210,3 +210,76 @@ main {
 .contact-info a:hover {
   text-decoration: underline;
 }
+@media (max-width: 1024px) {
+  .intro h1 {
+    font-size: 4rem;
+  }
+
+  nav ul {
+    gap: 25px;
+    margin-right: 20px;
+  }
+
+  .intro {
+    margin-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contact h1,
+  .certifications-container h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    margin-right: 20px;
+  }
+
+  .intro {
+    align-items: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .intro h1 {
+    font-size: 3rem;
+  }
+
+  .intro button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .contact h1,
+  .certifications-container h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .certifications,
+  .contact p,
+  .contact-info a {
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+}
