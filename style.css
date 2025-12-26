@@ -102,6 +102,9 @@ main {
   font-family: inherit;
   width: 8cm;;
 }
+.intro p {
+  line-height: 1.6; /* Adjust this number for more or less spacing */
+}
 
 .profile {
   display: flex;
@@ -283,3 +286,4 @@ main {
     background-position: center;
   }
 }
+
